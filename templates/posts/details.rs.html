@@ -21,6 +21,7 @@
     <meta property="og:url" content="@uri!(posts::details: blog = &blog.fqn, slug = &article.slug, responding_to = _)"/>
     <meta property="og:description" content="@article.subtitle"/>
     <link rel="canonical" href="@article.ap_url"/>
+    <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
 
     @if !ctx.2.clone().map(|u| u.hide_custom_css).unwrap_or(false) {
         @if let Some(ref theme) = blog.theme {
@@ -54,7 +55,13 @@
         }
     </header>
 
-    <article class="e-content" dir="auto">
+    <script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
+    <script>
+    const heti = new Heti('.heti');
+    heti.autoSpacing(); // 自动进行中西文混排美化和标点挤压
+    </script>
+
+    <article class="e-content heti" dir="auto">
         @Html(&article.content)
     </article>
     <div class="article-meta">
