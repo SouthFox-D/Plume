@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: plumeorg/plume
+          images: southfox09/plume
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
