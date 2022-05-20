@@ -590,6 +590,9 @@ figure {
 
 //highlighting
 code {
+  color: #fe5454;
+  word-break: break-word;
+
   .constant{
       color: $code-constant-color;
   }
@@ -611,4 +614,3 @@ code {
   .function{
       color:inherit;
   }
-}
